@@ -1,0 +1,9 @@
+.form-signin {
+    margin: auto;
+    width: 50%;
+}
+
+.register {
+    cursor: pointer;
+    float: right;
+}

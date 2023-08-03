@@ -1,0 +1,42 @@
+<div class="modal-header p-5 pb-4 border-bottom-0">
+    <h1 class="font-weight-bold mb-0 fs-2">Sign up for free</h1>
+    <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body p-5 pt-0">
+    <form #form="ngForm" class="">
+        <div class="form-floating mb-3">
+            <label for="email">Email address</label>
+            <input #email="ngModel" [(ngModel)]="registerForm.email" required type="email"
+                class="form-control rounded-3" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="alert alert-danger" *ngIf="email?.['touched'] && email?.['invalid']">
+            <div *ngIf="email.errors?.['required']">Email Address is required</div>
+        </div>
+        <div class="form-floating mb-3">
+            <label for="firstName">First Name</label>
+            <input #firstName="ngModel" [(ngModel)]="registerForm.firstName" type="text" class="form-control rounded-3"
+                id="firstName" name="firstName" required>
+            <div *ngIf="firstName?.['touched'] && firstName?.['invalid']" class="alert alert-danger">
+                <div *ngIf="firstName.errors?.['required']">First name is required</div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <label for="lastName">Last Name</label>
+            <input #lastName="ngModel" [(ngModel)]="registerForm.lastName" type="text" class="form-control rounded-3"
+                id="lastName" name="lastName">
+            <div *ngIf="lastName?.['touched'] && lastName?.['invalid']" class="alert alert-danger">
+                <div *ngIf="lastName.errors?.['required']">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingPassword">Password</label>
+            <input #password="ngModel" [(ngModel)]="registerForm.password" name="password" type="password"
+                class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+        </div>
+        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
+            (click)="activeModal.close(registerForm)" [disabled]="!form.valid">Sign up</button>
+        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+    </form>
+</div>

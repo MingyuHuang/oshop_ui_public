@@ -1,0 +1,33 @@
+<h1>Order Detail</h1>
+<div class="col-10" *ngIf="order$ | async as order">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of order.items">
+                <td>
+                    <div [style.backgroundImage]="'url('+ item.imageUrl + ')'" class="thumbnail"></div>
+                </td>
+                <td>{{item.title}}</td>
+                <td>{{item.quantity}}</td>
+                <td class="text-right">{{item.totalPrice | currency: 'USD': true}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="text-right">{{order.totalPrice | currency: 'USD': true}}</th>
+            </tr>
+        </tfoot>
+    </table>
+    <button class="btn btn-danger" (click)="open()">Delete</button>
+
+</div>
