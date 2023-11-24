@@ -2,7 +2,7 @@ version: 0.2
 env:
   variables:
     APP_NAME: "oshop"
-    TAG: "v0.1"
+    TAG: "1"
 phases:
   pre_build:
     commands:
