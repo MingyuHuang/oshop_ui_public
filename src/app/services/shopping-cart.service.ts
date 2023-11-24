@@ -4,7 +4,7 @@ import { firstValueFrom, Observable, take } from 'rxjs';
 import { Item } from '../dto/item';
 import { Product } from '../dto/product';
 import { ShoppingCart } from '../dto/shopping-cart';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { RabbitmqService } from './rabbitmq.service';
 
 

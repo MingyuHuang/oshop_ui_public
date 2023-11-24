@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom, map, Observable, switchMap } from 'rxjs';
 import { Order } from '../dto/order';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { ShoppingCartService } from './shopping-cart.service';
 
 @Injectable({

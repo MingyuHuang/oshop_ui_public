@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Product } from '../dto/product';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { AuthenticationService } from './authentication.service';
 
 @Injectable({

@@ -1,0 +1,19 @@
+version: 0.2
+env:
+  variables:
+    APP_NAME: "oshop"
+    TAG: "v0.1"
+phases:
+  pre_build:
+    commands:
+      - echo Logging to Amazon ECR
+      - TAG=$TAG
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+  build:
+    commands:
+      - echo build process started now
+      - docker build -t $ECR_FRONTEND_REPOSITORY_URI:$TAG .
+  post_build:
+    commands:
+      - echo Push docker image to Amazon ECR...
+      - docker push $ECR_REGISTRY:$TAG

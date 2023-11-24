@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../dto/user';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({

@@ -4,7 +4,7 @@ import { User } from '../dto/user';
 import { catchError, Observable, Subject, throwError } from 'rxjs';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
