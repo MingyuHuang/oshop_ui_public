@@ -12,7 +12,7 @@ COPY package.json package-lock.json ./
 # download and install dependencies defined in package.json
 RUN npm install --force
 # install the angular cli
-RUN npm i @angular/cli@16.2.10 --force
+RUN npm i @angular/cli@17.0.0 --force
 COPY . .
 
 RUN npm run build
