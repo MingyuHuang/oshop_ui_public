@@ -27,6 +27,7 @@ export class ProductService {
 
   getAll(): Observable<Product[]> {
 
+    console.log(this.productServiceUrl);
     return this.httpClient.get<Product[]>(this.productServiceUrl + "/products", { 'headers': this.headers }).pipe(catchError(this.handleError));
   }
 

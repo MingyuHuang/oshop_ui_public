@@ -70,7 +70,7 @@ import { LoginModalComponent } from './modals/login-modal/login-modal.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CustomFormsModule,
+    // CustomFormsModule,
     DataTablesModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },

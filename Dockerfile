@@ -6,7 +6,7 @@ ENV USER_SERVICE_URL=http://LB-OShop-2044878770.eu-north-1.elb.amazonaws.com:808
 ENV RABBITMQ_URL=ws://LB-OShop-2044878770.eu-north-1.elb.amazonaws.com:15674/ws
 
 # specify the work directory in docker
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 COPY package.json package-lock.json ./
 
 # download and install dependencies defined in package.json
