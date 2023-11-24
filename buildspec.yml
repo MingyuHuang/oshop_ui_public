@@ -2,12 +2,12 @@ version: 0.2
 env:
   variables:
     APP_NAME: "oshop"
-    TAG: "1"
+
 phases:
   pre_build:
     commands:
       - echo Logging to Amazon ECR
-      - TAG=$TAG
+      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
   build:
     commands:
