@@ -10,12 +10,12 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 
 # download and install dependencies defined in package.json
-RUN npm install
+RUN npm install --force
 # install the angular cli
-RUN npm i @angular/cli@16.2.10
+RUN npm i @angular/cli@16.2.10 --force
 COPY . .
 
-RUN npm run build-prod
+RUN npm run build
 
 # Second stage
 FROM nginx:1.17.1-alpine
