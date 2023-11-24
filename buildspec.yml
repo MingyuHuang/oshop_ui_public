@@ -16,4 +16,4 @@ phases:
   post_build:
     commands:
       - echo Push docker image to Amazon ECR...
-      - docker push $ECR_REGISTRY:$TAG
+      - docker push $ECR_FRONTEND_REPOSITORY_URI:$TAG
